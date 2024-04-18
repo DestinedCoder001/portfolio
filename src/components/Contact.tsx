@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import { IoChatbubblesOutline } from "react-icons/io5";
 import emailjs from "@emailjs/browser";
 import Toast, { notifyError, notifySuccess, notifyWarning } from "./Toast";
+import { LuSendHorizonal } from "react-icons/lu";
 
 const Contact = () => {
   const className =
@@ -158,9 +159,9 @@ const Contact = () => {
             type="submit"
             disabled={loading}
             variants={variants}
-            className="bg-blue-600 text-[0.9rem] w-[70%] mx-auto text-white py-2 rounded-md block disabled:bg-gray-600 disabled:cursor-progress"
+            className="bg-blue-600 text-[0.9rem] w-[70%] mx-auto text-white py-2 rounded-md disabled:bg-gray-600 disabled:cursor-progress flex justify-center"
           >
-            {loading ? <span>Sending...</span> : <span>Send Message</span>}
+            {loading ? <span>Sending...</span> : <p className="flex items-center gap-x-1 mx-auto">Send Message <LuSendHorizonal /></p>}
           </motion.button>
           <p className="text-center text-slate-400">
             My email: destinyolowokere@gmail.com
