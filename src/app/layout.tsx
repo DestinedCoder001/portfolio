@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth no-scrollbar">
       <body
-        className={`${poppins.className} container mx-auto bg-[#070A17] min-h-screen`}
+        className={`${poppins.className} max-w-[2300px] mx-auto bg-[#070A17] min-h-screen`}
       >
         <NavBar />
         {children}
