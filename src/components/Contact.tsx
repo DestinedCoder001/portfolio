@@ -51,7 +51,7 @@ const Contact = () => {
       formData.message.trim().length < 1 ||
       formData.subject.trim().length < 1
     ) {
-      setLoading(false)
+      setLoading(false);
       notifyWarning("Please fill in the fields.");
     }
     if (
@@ -71,11 +71,12 @@ const Contact = () => {
         )
         .then(
           () => {
-            setLoading(false)
+            setLoading(false);
             notifySuccess("Sent successfully.");
+            setFormData({ email: "", subject: "", message: "" });
           },
           (error) => {
-            setLoading(false)
+            setLoading(false);
             error && notifyError("Message could not be sent.");
           }
         );
@@ -161,7 +162,13 @@ const Contact = () => {
             variants={variants}
             className="bg-blue-600 text-[0.9rem] w-[70%] mx-auto text-white py-2 rounded-md disabled:bg-gray-600 disabled:cursor-progress flex justify-center"
           >
-            {loading ? <span>Sending...</span> : <p className="flex items-center gap-x-1 mx-auto">Send Message <LuSendHorizonal /></p>}
+            {loading ? (
+              <span>Sending...</span>
+            ) : (
+              <p className="flex items-center gap-x-1 mx-auto">
+                Send Message <LuSendHorizonal />
+              </p>
+            )}
           </motion.button>
           <p className="text-center text-slate-400">
             My email: destinyolowokere@gmail.com
