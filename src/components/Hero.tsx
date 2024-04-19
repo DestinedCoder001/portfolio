@@ -60,7 +60,7 @@ const Hero = () => {
         width={100}
         height={100}
         alt="hero image"
-        className="w-full md:w-[60%] lg:w-[35%]"
+        className="w-[80%] md:w-[60%] lg:w-[35%]"
       />
     </motion.div>
   );
