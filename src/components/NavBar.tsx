@@ -63,6 +63,7 @@ const NavBar = () => {
       <div className="sticky text-white flex justify-between items-center padding backdrop-blur-[3px] top-0 py-2 w-full z-[100]">
         <Link
           href="#hero"
+          onClick={()=>setTab("")}
           className="text-[1.5rem] font-semibold rounded-full p-1 border-[1.5px] border-slate-400 hover:bg-slate-600"
         >
           <span className="text-slate-400">O</span>
