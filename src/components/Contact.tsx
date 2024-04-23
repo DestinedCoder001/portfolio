@@ -149,7 +149,7 @@ const Contact = () => {
             <textarea
               name="message"
               id="message"
-              className={`${className}`}
+              className={className}
               onChange={(e) => {
                 handleChange(e);
               }}
