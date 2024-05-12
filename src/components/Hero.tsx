@@ -41,9 +41,9 @@ const Hero = () => {
         </p>
         <div className="mt-8 flex md:gap-x-3 justify-between font-bold lg:px-4">
           <div className="text-[#828282] text-[0.8rem] md:text-[1rem] flex items-center gap-x-4">
-            <span className="text-[1.2rem] md:text-[2.8rem]">1</span>
+            <span className="text-[1.2rem] md:text-[2.8rem]">2</span>
             <span className="uppercase">
-              year of
+              years of
               <br /> experience
             </span>
           </div>
