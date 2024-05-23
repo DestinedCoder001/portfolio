@@ -171,7 +171,7 @@ const Contact = () => {
             )}
           </motion.button>
           <p className="text-center text-slate-400">
-            My email: destinyolowokere@gmail.com
+            My email: <a className="underline underline-offset-2" href="mailto:destinyolowokere@gmail.com">destinyolowokere@gmail.com</a>
           </p>
         </motion.form>
       </motion.div>
