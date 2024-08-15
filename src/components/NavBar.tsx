@@ -3,11 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import github from "../assets/images/github-logo.svg";
 import { MdMenu, MdClose } from "react-icons/md";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { TabContext } from "./Provider";
 const NavBar = () => {
   const [open, setOpen] = useState(false);
-  const [tab, setTab] = useState("");
+  // const [tab, setTab] = useState("");
+  const tabContext = useContext(TabContext)
 
   useEffect(() => {
     if (open) {
@@ -63,7 +65,7 @@ const NavBar = () => {
       <div className="sticky text-white flex justify-between items-center padding backdrop-blur-[3px] top-0 py-2 w-full z-[100]">
         <Link
           href="#hero"
-          onClick={()=>setTab("")}
+          onClick={()=>tabContext?.setTab("")}
           className="text-[1.5rem] font-semibold rounded-full p-1 border-[1.5px] border-slate-400 hover:bg-slate-600"
         >
           <span className="text-slate-400">O</span>
@@ -73,29 +75,29 @@ const NavBar = () => {
           <div className="flex items-center gap-x-4">
             <Link
               href="#about"
-              onClick={()=>setTab("about")}
-              className={`${tab === "about" && "bg-blue-600"} font-semibold hover:bg-blue-600 rounded-md px-2 py-1`}
+              onClick={()=>tabContext?.setTab("about")}
+              className={`${tabContext?.tab === "about" && "bg-blue-600"} font-semibold hover:bg-blue-600 rounded-md px-2 py-1`}
             >
               about me
             </Link>
             <Link
               href="#skills"
-              onClick={()=>setTab("skills")}
-              className={`${tab === "skills" && "bg-blue-600"} font-semibold hover:bg-blue-600 rounded-md px-2 py-1`}
+              onClick={()=>tabContext?.setTab("skills")}
+              className={`${tabContext?.tab === "skills" && "bg-blue-600"} font-semibold hover:bg-blue-600 rounded-md px-2 py-1`}
             >
               skills
             </Link>
             <Link
               href="#projects"
-              onClick={()=>setTab("projects")}
-              className={`${tab === "projects" && "bg-blue-600"} font-semibold hover:bg-blue-600 rounded-md px-2 py-1`}
+              onClick={()=>tabContext?.setTab("projects")}
+              className={`${tabContext?.tab === "projects" && "bg-blue-600"} font-semibold hover:bg-blue-600 rounded-md px-2 py-1`}
             >
               projects
             </Link>
             <Link
               href="#contact"
-              onClick={()=>setTab("contact")}
-              className={`${tab === "contact" && "bg-blue-600"} font-semibold hover:bg-blue-600 rounded-md px-2 py-1`}
+              onClick={()=>tabContext?.setTab("contact")}
+              className={`${tabContext?.tab === "contact" && "bg-blue-600"} font-semibold hover:bg-blue-600 rounded-md px-2 py-1`}
             >
               contact me
             </Link>
@@ -142,11 +144,11 @@ const NavBar = () => {
             <Link
               onClick={() => {
                 setOpen(false)
-                setTab("about")
+                tabContext?.setTab("about")
               }}
               href="#about"
               className={`${
-                tab === "about" && "bg-blue-600"
+                tabContext?.tab === "about" && "bg-blue-600"
               } font-semibold text-white hover:bg-blue-600 rounded-md px-2 py-1`}
             >
               about me
@@ -156,11 +158,11 @@ const NavBar = () => {
             <Link
               onClick={() => {
                 setOpen(false)
-                setTab("skills")
+                tabContext?.setTab("skills")
               }}
               href="#skills"
               className={`${
-                tab === "skills" && "bg-blue-600"
+                tabContext?.tab === "skills" && "bg-blue-600"
               } font-semibold text-white hover:bg-blue-600 rounded-md px-2 py-1`}
             >
               skills
@@ -170,11 +172,11 @@ const NavBar = () => {
             <Link
               onClick={() => {
                 setOpen(false)
-                setTab("projects")
+                tabContext?.setTab("projects")
               }}
               href="#projects"
               className={`${
-                tab === "projects" && "bg-blue-600"
+                tabContext?.tab === "projects" && "bg-blue-600"
               } font-semibold text-white hover:bg-blue-600 rounded-md px-2 py-1`}
             >
               projects
@@ -184,11 +186,11 @@ const NavBar = () => {
             <Link
               onClick={() => {
                 setOpen(false)
-                setTab("contact")
+                tabContext?.setTab("contact")
               }}
               href="#contact"
               className={`${
-                tab === "contact" && "bg-blue-600"
+                tabContext?.tab === "contact" && "bg-blue-600"
               } font-semibold text-white hover:bg-blue-600 rounded-md px-2 py-1`}
             >
               contact me

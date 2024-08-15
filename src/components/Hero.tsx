@@ -22,7 +22,7 @@ const Hero = () => {
       id="hero"
       animate="animate"
       initial="initial"
-      className="text-white flex flex-col lg:flex-row items-center justify-around lg:justify-between mt-8 lg:mt-0 min-h-[95vh]"
+      className="text-white flex flex-col gap-y-6 lg:flex-row items-center justify-around lg:justify-between mt-8 lg:mt-0 min-h-[95vh]"
     >
       <div className="w-full lg:max-w-[55%]">
         <h2 className="text-[1.3rem] md:text-[1.5rem] lg:text-[1.7rem] font-[700]">
@@ -39,7 +39,7 @@ const Hero = () => {
         <p className="font-[600] text-[1rem] md:text-[1.2rem] text-gray-300 uppercase">
           Frontend Developer
         </p>
-        <div className="mt-8 flex md:gap-x-3 justify-between font-bold lg:px-4">
+        <div className="mt-8 flex gap-x-3 justify-between font-bold lg:px-4">
           <div className="text-[#828282] text-[0.8rem] md:text-[1rem] flex items-center gap-x-4">
             <span className="text-[1.2rem] md:text-[2.8rem]">2+</span>
             <span className="uppercase">
