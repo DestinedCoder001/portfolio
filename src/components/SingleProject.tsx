@@ -24,7 +24,7 @@ const SingleProject = ({
   isPrivateCode,
 }: Props) => {
   const ref = useRef(null);
-  const inView = useInView(ref, { margin: "-150px" });
+  const inView = useInView(ref, { margin: "-100px" });
   const variants1 = {
     initial: {
       opacity: 0,

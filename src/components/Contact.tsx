@@ -1,10 +1,11 @@
 "use client";
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { IoChatbubblesOutline } from "react-icons/io5";
 import emailjs from "@emailjs/browser";
 import Toast, { notifyError, notifySuccess, notifyWarning } from "./Toast";
 import { LuSendHorizonal } from "react-icons/lu";
+import { TabContext } from "./Provider";
 
 const Contact = () => {
   const className =
@@ -25,13 +26,23 @@ const Contact = () => {
   };
   const ref = useRef(null);
   const formRef = useRef(null);
-  const inView = useInView(ref, { margin: "-150px" });
+  const inView = useInView(ref, { margin: "-100px" });
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
     subject: "",
     message: "",
   });
+
+  const tabContext = useContext(TabContext)
+  useEffect(()=>{
+    if (inView) {
+      tabContext?.setTab("contact")
+    }
+    return () => {
+      tabContext?.setTab("hero")
+    }
+  },[inView, tabContext?.setTab, tabContext?.tab])
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
