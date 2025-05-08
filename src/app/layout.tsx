@@ -24,6 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth no-scrollbar">
+      <head>
+      <meta name="title" property="og:title" content="Destiny Olowokere: Frontend Developer" />
+      </head>
       <body
         className={`${poppins.className} max-w-[2300px] mx-auto bg-[#070A17] min-h-screen`}
       >
