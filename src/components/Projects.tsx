@@ -6,21 +6,10 @@ import dashboard from "../assets/images/dashboard_screenshot.svg";
 import abs from "../assets/images/abs_screenshot.svg";
 import { useContext, useEffect, useRef } from "react";
 import { useInView } from "framer-motion";
-import { TabContext } from "./Provider";
 
 const Projects = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { margin: "-100px" });
-  const tabContext = useContext(TabContext);
-
-  useEffect(() => {
-    if (inView) {
-      tabContext?.setTab("projects");
-    }
-    return () => {
-      tabContext?.setTab("hero");
-    };
-  }, [inView, tabContext?.setTab, tabContext?.tab]);
 
   return (
     <div id="projects" className="flex flex-col items-center justify-center" ref={ref}>

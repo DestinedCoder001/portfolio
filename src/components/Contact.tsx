@@ -5,7 +5,6 @@ import { IoChatbubblesOutline } from "react-icons/io5";
 import emailjs from "@emailjs/browser";
 import Toast, { notifyError, notifySuccess, notifyWarning } from "./Toast";
 import { LuSendHorizonal } from "react-icons/lu";
-import { TabContext } from "./Provider";
 
 const Contact = () => {
   const className =
@@ -33,16 +32,6 @@ const Contact = () => {
     subject: "",
     message: "",
   });
-
-  const tabContext = useContext(TabContext)
-  useEffect(()=>{
-    if (inView) {
-      tabContext?.setTab("contact")
-    }
-    return () => {
-      tabContext?.setTab("hero")
-    }
-  },[inView, tabContext?.setTab, tabContext?.tab])
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>

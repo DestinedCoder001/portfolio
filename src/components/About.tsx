@@ -3,7 +3,6 @@ import Image from "next/image";
 import heroImg from "../assets/images/about-img.svg";
 import { motion, useInView } from "framer-motion";
 import { useContext, useEffect, useRef } from "react";
-import { TabContext } from "./Provider";
 
 const variants = {
   animate: {
@@ -22,16 +21,6 @@ const variants = {
 const About = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { margin: "-100px" });
-  const tabContext = useContext(TabContext);
-
-  useEffect(()=>{
-    if (inView) {
-      tabContext?.setTab("about")
-    }
-    return () => {
-      tabContext?.setTab("hero")
-    }
-  },[inView, tabContext?.setTab, tabContext?.tab])
 
   return (
     <motion.div

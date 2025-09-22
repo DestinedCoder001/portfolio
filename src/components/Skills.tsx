@@ -11,20 +11,10 @@ import tsIcon from "../assets/images/typescript-icon.svg";
 import reactIcon from "../assets/images/react-icon.svg";
 import nextjsIcon from "../assets/images/nextjs-icon.png";
 import { useContext, useEffect, useRef } from "react";
-import { TabContext } from "./Provider";
+
 function Skills() {
   const ref = useRef(null);
   const inView = useInView(ref, { margin: "-100px" });
-  const tabContext = useContext(TabContext)
-
-  useEffect(()=>{
-    if (inView) {
-      tabContext?.setTab("skills")
-    }
-    return () => {
-      tabContext?.setTab("hero")
-    }
-  },[inView, tabContext?.setTab, tabContext?.tab])
 
   const variants1 = {
     initial: {
