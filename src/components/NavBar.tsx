@@ -58,8 +58,8 @@ const NavBar = () => {
                 href="#hero"
                 className="font-semibold rounded-full p-1 border-[1.5px] border-slate-400 hover:bg-slate-600"
               >
+                <span className="gradient">D</span>
                 <span className="text-slate-200">O</span>
-                <span className="text-blue-600">D</span>
               </Link>
               <div className="justify-between items-center gap-x-16 hidden md:flex">
                 <div className="flex items-center gap-x-4 font-medium">
