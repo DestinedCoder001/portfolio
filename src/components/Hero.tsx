@@ -16,18 +16,18 @@ const Hero = () => {
   };
   return (
     <LazyMotion features={domAnimation} strict>
-      <m.div
+      <m.section
         variants={variants}
         id="hero"
         animate="animate"
         initial="initial"
-        className="text-white flex flex-col gap-y-6 lg:flex-row items-center justify-around lg:justify-between mt-20 lg:mt-0 min-h-[85vh]"
+        className="text-white flex flex-col gap-6 landscape:flex-row items-center justify-around lg:justify-between mt-20 lg:mt-0 min-h-[85vh]"
       >
         <div className="w-full lg:max-w-[55%]">
           <h2 className="text-[1.3rem] md:text-[1.5rem] lg:text-[1.7rem] font-[700]">
             <span>Hello 👋, I' m</span>
             <div className="my-2">
-              <span className="text-blue-600 text-4xl md:text-[2.7rem] lg:text-[3rem]">
+              <span className="gradient text-4xl md:text-[2.7rem] lg:text-[3rem]">
                 Destiny
               </span>{" "}
               <span className="text-slate-400 text-4xl md:text-[2.7rem] lg:text-[3rem]">
@@ -55,7 +55,7 @@ const Hero = () => {
             className="w-full h-full"
           />
         </div>
-      </m.div>
+      </m.section>
     </LazyMotion>
   );
 };
