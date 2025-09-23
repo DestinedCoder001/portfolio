@@ -1,9 +1,5 @@
 export const navLinks = [
     {
-        href: "#about",
-        text: "about me"
-    },
-    {
         href: "#skills",
         text: "skills"
     },
