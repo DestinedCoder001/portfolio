@@ -60,7 +60,7 @@ function Skills() {
     >
       <motion.h1
         variants={variants1}
-        className="text-slate-400 text-[1.6rem] md:text-[1.8rem] lg:text-[2rem] font-[700] text-center"
+        className="text-slate-200 text-[1.6rem] md:text-[1.8rem] lg:text-[2rem] font-[700] text-center"
       >
         My <span className="gradient">Tech Stack</span>
       </motion.h1>

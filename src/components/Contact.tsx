@@ -96,11 +96,11 @@ const Contact = () => {
       >
         <div className="w-full lg:w-1/2">
           <h1 className="flex items-center gap-x-2 font-[600] text-[1.3rem] md:text-[1.5rem] lg:text-[1.7rem] ">
-            <span className="text-slate-400">Let's</span>
+            <span className="text-slate-200">Let's</span>
             <span className="text-blue-600">Connect</span>{" "}
             <IoChatbubblesOutline className="text-white" />
           </h1>
-          <p className="text-slate-400 font-[500]">
+          <p className="text-slate-200 font-[500]">
             You can contact me by filling the form or send a direct message via
             the email below. <br />
             My inbox is always open and I'll get back to you.
@@ -170,7 +170,7 @@ const Contact = () => {
               </p>
             )}
           </motion.button>
-          <p className="text-center text-slate-400">
+          <p className="text-center text-slate-200">
             My email: <a className="underline underline-offset-2" href="mailto:destinyolowokere@gmail.com">destinyolowokere@gmail.com</a>
           </p>
         </motion.form>

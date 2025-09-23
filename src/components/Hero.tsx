@@ -30,7 +30,7 @@ const Hero = () => {
               <span className="gradient text-4xl md:text-[2.7rem] lg:text-[3rem]">
                 Destiny
               </span>{" "}
-              <span className="text-slate-400 text-4xl md:text-[2.7rem] lg:text-[3rem]">
+              <span className="text-slate-300 text-4xl md:text-[2.7rem] lg:text-[3rem]">
                 Olowokere
               </span>
             </div>
@@ -44,7 +44,7 @@ const Hero = () => {
             with modern technologies.
           </p>
         </div>
-        <div className="w-full h-auto bg-white/10 rounded-2xl overflow-hidden max-w-[400px]">
+        <div className="w-full h-auto bg-white/10 rounded-3xl overflow-hidden max-w-[400px]">
           <Image
             src={dev}
             width={500}
