@@ -36,7 +36,7 @@ const NavBar = () => {
           : { height: 60 }
       }
       transition={{ duration: 0.3 }}
-      className="border border-slate-800 fixed w-[90%] left-1/2 -translate-x-1/2 text-white flex flex-col rounded-2xl backdrop-blur-xl top-4 px-3 py-2 z-[100] overflow-hidden"
+      className="bg-white/10 fixed w-[90%] left-1/2 -translate-x-1/2 text-white flex flex-col rounded-2xl backdrop-blur-xl top-4 px-3 py-2 z-[100] overflow-hidden"
     >
       <div className="flex justify-between items-center h-[60px]">
         <Link

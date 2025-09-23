@@ -6,7 +6,7 @@ import Skills from "@/components/Skills";
 
 export default function Home() {
   return (
-    <div className="padding overflow-hidden">
+    <div className="p-[5%] overflow-hidden">
       <Hero />
       <About />
       <Skills />
