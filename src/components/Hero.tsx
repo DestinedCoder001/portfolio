@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import heroImg from "../assets/images/profile-pic.svg";
+import dev from "../assets/images/dev.png";
 import { domAnimation, LazyMotion, m } from "framer-motion";
 const Hero = () => {
   const variants = {
@@ -21,36 +21,40 @@ const Hero = () => {
         id="hero"
         animate="animate"
         initial="initial"
-        className="text-white flex flex-col gap-y-6 lg:flex-row items-center justify-around lg:justify-between mt-20 lg:mt-0 min-h-[95vh]"
+        className="text-white flex flex-col gap-y-6 lg:flex-row items-center justify-around lg:justify-between mt-20 lg:mt-0 min-h-[85vh]"
       >
         <div className="w-full lg:max-w-[55%]">
           <h2 className="text-[1.3rem] md:text-[1.5rem] lg:text-[1.7rem] font-[700]">
             <span>Hello 👋, I' m</span>
             <div className="my-2">
-              <span className="text-blue-600 text-[2.5rem] md:text-[2.7rem] lg:text-[3rem]">
+              <span className="text-blue-600 text-4xl md:text-[2.7rem] lg:text-[3rem]">
                 Destiny
               </span>{" "}
-              <span className="text-slate-400 text-[2.5rem] md:text-[2.7rem] lg:text-[3rem]">
+              <span className="text-slate-400 text-4xl md:text-[2.7rem] lg:text-[3rem]">
                 Olowokere
               </span>
             </div>
           </h2>
-          <p className="text-[1.2rem] font-medium">
+          <p className="text-[1.2rem] font-medium mt-4">
             a{" "}
-            <span className="text-[1.4rem] text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 uppercase font-semibold">
+            <span className="text-[1.4rem] gradient uppercase font-semibold">
               frontend developer
             </span>{" "}
             passionate about building responsive, user-friendly web applications
             with modern technologies.
           </p>
         </div>
-        <Image
-          src={heroImg}
-          width={100}
-          height={100}
-          alt="hero image"
-          className="w-full md:w-[60%] lg:w-[35%]"
-        />
+        <div className="w-full h-auto bg-white/10 rounded-2xl overflow-hidden max-w-[400px]">
+          <Image
+            src={dev}
+            width={500}
+            height={500}
+            priority
+            quality={60}
+            alt="hero image"
+            className="w-full h-full"
+          />
+        </div>
       </m.div>
     </LazyMotion>
   );

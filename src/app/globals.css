@@ -42,3 +42,7 @@
   background-color: rgb(37 99 235);
   border-radius: 0.3rem;
 }
+
+.gradient {
+  @apply bg-gradient-to-r from-cyan-400 to-blue-600 text-transparent bg-clip-text;
+}
