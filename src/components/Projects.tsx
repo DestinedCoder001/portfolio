@@ -8,7 +8,7 @@ const Projects = () => {
   const ref = useRef(null);
 
   return (
-    <div id="projects" className="flex flex-col items-center justify-center" ref={ref}>
+    <section id="projects" className="flex flex-col items-center justify-center" ref={ref}>
       <h1 className="text-slate-300 text-[1.6rem] md:text-[1.8rem] lg:text-[2rem] font-[700] text-center">
         My <span className="gradient">Projects</span>
       </h1>
@@ -29,7 +29,7 @@ const Projects = () => {
         liveUrl="https://paradise-view-green.vercel.app"
         codeUrl="https://github.com/Olowokere-Destiny/paradise-view"
       />
-    </div>
+    </section>
   );
 };
 
