@@ -26,7 +26,7 @@ const SingleProject = ({
 }: Props) => {
   const ref = useRef(null);
   const inView = useInView(ref, { margin: "-100px" });
-console.log(demoVideoUrl)
+  console.log(demoVideoUrl);
   const variant = {
     initial: {
       scale: 0.95,
@@ -52,12 +52,12 @@ console.log(demoVideoUrl)
       >
         <div className="w-full lg:w-1/2">
           {hasDemoVideo ? (
-            <div className="w-full h-full rounded-2xl overflow-hidden border-2 border-slate-500">
+            <div className="w-full h-full rounded-2xl overflow-hidden">
               <video
                 controls
                 controlsList="nodownload"
                 playsInline
-                className="w-full h-full min-h-[12rem] md:min-h-[250px]"
+                className="w-full h-full"
               >
                 <source src={demoVideoUrl} type="video/mp4" />
               </video>
