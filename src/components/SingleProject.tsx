@@ -7,11 +7,13 @@ import Link from "next/link";
 import { RxExternalLink } from "react-icons/rx";
 
 interface Props {
-  image: StaticImageData;
+  image?: StaticImageData;
   title: string;
   description: string;
   codeUrl: string;
   liveUrl: string;
+  hasDemoVideo?: boolean;
+  demoVideoUrl?: string;
 }
 const SingleProject = ({
   image,
@@ -19,10 +21,12 @@ const SingleProject = ({
   description,
   codeUrl,
   liveUrl,
+  hasDemoVideo,
+  demoVideoUrl,
 }: Props) => {
   const ref = useRef(null);
   const inView = useInView(ref, { margin: "-100px" });
-
+console.log(demoVideoUrl)
   const variant = {
     initial: {
       scale: 0.95,
@@ -44,16 +48,29 @@ const SingleProject = ({
         animate={inView && "animate"}
         initial="initial"
         ref={ref}
-        className="w-full flex lg:flex-row flex-col gap-y-10 md:gap-x-4 justify-center lg:justify-between items-center my-12 bg-white/10 p-4 rounded-3xl"
+        className="w-full flex lg:flex-row flex-col gap-8 justify-center lg:justify-between items-center my-12 bg-white/10 p-4 rounded-3xl"
       >
         <div className="w-full lg:w-1/2">
-          <Image
-            src={image}
-            width={100}
-            height={100}
-            className="w-full"
-            alt="Project Image"
-          />
+          {hasDemoVideo ? (
+            <div className="w-full h-full rounded-2xl overflow-hidden border-2 border-slate-500">
+              <video
+                controls
+                controlsList="nodownload"
+                playsInline
+                className="w-full h-full min-h-[12rem] md:min-h-[250px]"
+              >
+                <source src={demoVideoUrl} type="video/mp4" />
+              </video>
+            </div>
+          ) : (
+            <Image
+              src={image || ""}
+              width={500}
+              height={500}
+              className="w-full rounded-2xl"
+              alt="Project Image"
+            />
+          )}
         </div>
         <m.div
           className="w-full lg:w-1/2"
