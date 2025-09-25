@@ -40,12 +40,12 @@ const NavBar = () => {
 
   return (
     <LazyMotion features={domAnimation} strict>
-      <div className="fixed w-[90%] left-1/2 -translate-x-1/2 top-4 z-[100]">
+      <div className="fixed w-full max-w-[1500px] left-1/2 -translate-x-1/2 top-4 z-[100]">
         <m.div
           variants={slideDownVariant}
           initial="initial"
           animate="animate"
-          className="rounded-3xl overflow-hidden"
+          className="rounded-3xl overflow-hidden mx-[5%]"
         >
           <m.div
             variants={expandVariant}

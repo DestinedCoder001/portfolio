@@ -25,7 +25,7 @@ export default function RootLayout({
       <meta name="title" property="og:title" content="Destiny Olowokere: Frontend Developer" />
       </head>
       <body
-        className={`${poppins.className} max-w-[2300px] mx-auto bg-[#070A17] min-h-screen`}
+        className={`${poppins.className} p-[5%] relative max-w-[1500px] mx-auto bg-[#070A17] min-h-screen`}
       >
           <NavBar />
           {children}

@@ -45,7 +45,7 @@ const SingleProject = ({
     <LazyMotion features={domAnimation} strict>
       <m.div
         variants={variant}
-        animate={inView && "animate"}
+        animate={inView ? "animate": "initial"}
         initial="initial"
         ref={ref}
         className="w-full flex lg:flex-row flex-col gap-8 justify-center lg:justify-between items-center my-12 bg-white/10 p-4 rounded-3xl"

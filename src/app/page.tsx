@@ -5,7 +5,7 @@ import Skills from "@/components/Skills";
 
 export default function Home() {
   return (
-    <div className="p-[5%] overflow-hidden">
+    <div className="overflow-hidden">
       <Hero />
       <Skills />
       <Projects />
