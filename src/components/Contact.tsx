@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import { IoChatbubblesOutline } from "react-icons/io5";
 import emailjs from "@emailjs/browser";
 import Toast, { notifyError, notifySuccess, notifyWarning } from "./Toast";
-import { LuSendHorizonal } from "react-icons/lu";
+import { LuSendHorizontal } from "react-icons/lu";
 
 const Contact = () => {
   const className =
@@ -165,7 +165,7 @@ const Contact = () => {
                 <span>Sending...</span>
               ) : (
                 <p className="flex items-center gap-x-1 mx-auto">
-                  Send Message <LuSendHorizonal />
+                  Send Message <LuSendHorizontal />
                 </p>
               )}
             </m.button>
