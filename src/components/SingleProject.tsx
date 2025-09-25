@@ -26,7 +26,7 @@ const SingleProject = ({
 }: Props) => {
   const ref = useRef(null);
   const inView = useInView(ref, { margin: "-100px" });
-  console.log(demoVideoUrl);
+
   const variant = {
     initial: {
       scale: 0.95,
