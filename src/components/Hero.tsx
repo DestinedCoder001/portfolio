@@ -1,68 +1,62 @@
 "use client";
 import Image from "next/image";
-import heroImg from "../assets/images/profile-pic.svg";
-import { motion } from "framer-motion";
+import dev from "../assets/images/dev.png";
+import { domAnimation, LazyMotion, m } from "framer-motion";
 const Hero = () => {
   const variants = {
     initial: {
       opacity: 0,
-      scale: 0.8,
     },
     animate: {
       opacity: 1,
-      scale: 1,
       transition: {
-        duration: 0.7,
+        duration: 1,
       },
     },
   };
   return (
-    <motion.div
-      variants={variants}
-      id="hero"
-      animate="animate"
-      initial="initial"
-      className="text-white flex flex-col gap-y-6 lg:flex-row items-center justify-around lg:justify-between mt-8 lg:mt-0 min-h-[95vh]"
-    >
-      <div className="w-full lg:max-w-[55%]">
-        <h2 className="text-[1.3rem] md:text-[1.5rem] lg:text-[1.7rem] font-[700]">
-          <span>Hello 👋, I' m</span>
-          <div className="my-2">
-            <span className="text-slate-400 text-[2.5rem] md:text-[2.7rem] lg:text-[3rem]">
-              Olowokere
+    <LazyMotion features={domAnimation} strict>
+      <m.section
+        variants={variants}
+        id="hero"
+        animate="animate"
+        initial="initial"
+        className="text-white flex flex-col gap-6 landscape:flex-row items-center justify-around lg:justify-between mt-20 lg:mt-0 min-h-[85vh]"
+      >
+        <div className="w-full lg:max-w-[55%]">
+          <h2 className="text-[1.3rem] md:text-[1.5rem] lg:text-[1.7rem] font-[700]">
+            <span>Hello 👋, I' m</span>
+            <div className="my-2">
+              <span className="gradient text-4xl md:text-[2.7rem] lg:text-[3rem]">
+                Destiny
+              </span>{" "}
+              <span className="text-slate-300 text-4xl md:text-[2.7rem] lg:text-[3rem]">
+                Olowokere
+              </span>
+            </div>
+          </h2>
+          <p className="text-[1.2rem] font-medium mt-4">
+            a{" "}
+            <span className="text-[1.4rem] gradient uppercase font-semibold">
+              frontend developer
             </span>{" "}
-            <span className="text-blue-600 text-[2.5rem] md:text-[2.7rem] lg:text-[3rem]">
-              Destiny
-            </span>
-          </div>
-        </h2>
-        <p className="font-[600] text-[1rem] md:text-[1.2rem] text-gray-300 uppercase">
-          Frontend Developer
-        </p>
-        <div className="mt-8 flex gap-x-3 justify-between font-bold lg:px-4">
-          <div className="text-[#828282] text-[0.8rem] md:text-[1rem] flex items-center gap-x-4">
-            <span className="text-[1.2rem] md:text-[2.8rem]">2+</span>
-            <span className="uppercase">
-              years of
-              <br /> experience
-            </span>
-          </div>
-          <div className="text-[#828282] text-[0.8rem] md:text-[1rem] flex items-center gap-x-4">
-            <span className="uppercase">
-              multiple personal projects
-              <br /> and real-world projects
-            </span>
-          </div>
+            passionate about building responsive, user-friendly web applications
+            with modern technologies.
+          </p>
         </div>
-      </div>
-      <Image
-        src={heroImg}
-        width={100}
-        height={100}
-        alt="hero image"
-        className="w-[80%] md:w-[60%] lg:w-[35%]"
-      />
-    </motion.div>
+        <div className="w-full h-auto bg-white/10 rounded-3xl overflow-hidden max-w-[400px]">
+          <Image
+            src={dev}
+            width={500}
+            height={500}
+            priority
+            quality={60}
+            alt="hero image"
+            className="w-full h-full"
+          />
+        </div>
+      </m.section>
+    </LazyMotion>
   );
 };
 

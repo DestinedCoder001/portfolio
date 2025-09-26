@@ -10,21 +10,15 @@ import gitIcon from "../assets/images/git-icon.svg";
 import tsIcon from "../assets/images/typescript-icon.svg";
 import reactIcon from "../assets/images/react-icon.svg";
 import nextjsIcon from "../assets/images/nextjs-icon.png";
-import { useContext, useEffect, useRef } from "react";
-import { TabContext } from "./Provider";
+import nodejsIcon from "../assets/images/node-icon.svg";
+import expressIcon from "../assets/images/express-icon.svg";
+import mongodbIcon from "../assets/images/mongodb-icon.svg";
+import socketIcon from "../assets/images/socket-icon.svg";
+import { useRef } from "react";
+
 function Skills() {
   const ref = useRef(null);
   const inView = useInView(ref, { margin: "-100px" });
-  const tabContext = useContext(TabContext)
-
-  useEffect(()=>{
-    if (inView) {
-      tabContext?.setTab("skills")
-    }
-    return () => {
-      tabContext?.setTab("hero")
-    }
-  },[inView, tabContext?.setTab, tabContext?.tab])
 
   const variants1 = {
     initial: {
@@ -50,31 +44,35 @@ function Skills() {
     { icon: gitIcon, name: "Git" },
     { icon: reactIcon, name: "ReactJS" },
     { icon: nextjsIcon, name: "Next JS" },
+    { icon: nodejsIcon, name: "Node.js" },
+    { icon: expressIcon, name: "ExpressJS" },
+    { icon: mongodbIcon, name: "MongoDB" },
+    { icon: socketIcon, name: "Socket.io" },
   ];
   return (
-    <motion.div
+    <motion.section
       ref={ref}
       variants={variants1}
       initial="initial"
-      animate={inView ? "animate" : "initial"}
-      className="min-h-[95vh] md:min-h-screen flex flex-col items-center justify-center"
+      animate={inView && "animate"}
+      className="md:min-h-screen flex flex-col items-center justify-center my-12"
       id="skills"
     >
       <motion.h1
         variants={variants1}
-        className="text-slate-400 text-[1.6rem] md:text-[1.8rem] lg:text-[2rem] font-[700] text-center"
+        className="text-slate-200 text-[1.6rem] md:text-[1.8rem] lg:text-[2rem] font-[700] text-center"
       >
-        My <span className="text-blue-600">Tech Stack</span>
+        My <span className="gradient">Tech Stack</span>
       </motion.h1>
       <motion.p
         variants={variants1}
-        className="text-slate-400 font-[500] my-4 text-center"
+        className="text-slate-200 font-[500] my-4 text-center"
       >
-        Technologies I utilize to create beautiful websites and user interfaces
+        Tools and technologies I use to craft modern, responsive web experiences.
       </motion.p>
       <motion.div
         variants={variants1}
-        className="mt-8 grid grid-cols-3 place-items-center gap-y-3 lg:flex lg:justify-between items-center w-full"
+        className="mt-8 grid grid-cols-3 md:grid-cols-4 place-items-center gap-y-3 lg:gap-y-6 w-full"
       >
         {icons.map(({ icon, name }, i) => (
           <div key={i} className="flex flex-col gap-y-1">
@@ -91,7 +89,7 @@ function Skills() {
           </div>
         ))}
       </motion.div>
-    </motion.div>
+    </motion.section>
   );
 }
 

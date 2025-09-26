@@ -3,9 +3,6 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
-import { createContext } from "react";
-import Provider from "@/components/Provider";
-// const AppContext = createContext();
 
 const poppins = Poppins({
   subsets: ["latin", "latin-ext"],
@@ -28,13 +25,11 @@ export default function RootLayout({
       <meta name="title" property="og:title" content="Destiny Olowokere: Frontend Developer" />
       </head>
       <body
-        className={`${poppins.className} max-w-[2300px] mx-auto bg-[#070A17] min-h-screen`}
+        className={`${poppins.className} p-[5%] relative max-w-[1500px] mx-auto bg-[#070A17] min-h-screen`}
       >
-        <Provider>
           <NavBar />
           {children}
           <Footer />
-        </Provider>
       </body>
     </html>
   );
