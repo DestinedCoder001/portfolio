@@ -2,6 +2,7 @@
 import Image from "next/image";
 import dev from "../assets/images/dev.png";
 import { domAnimation, LazyMotion, m } from "framer-motion";
+// update
 const Hero = () => {
   const variants = {
     initial: {
