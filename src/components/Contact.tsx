@@ -159,7 +159,7 @@ const Contact = () => {
               type="submit"
               disabled={loading}
               variants={variants}
-              className="bg-gradient-to-r from-cyan-600 to-blue-800 w-[70%] mx-auto text-white py-2 rounded-md disabled:bg-gray-600 disabled:cursor-progress flex justify-center"
+              className="bg-gradient-to-r from-cyan-600 to-blue-800 w-[70%] mx-auto text-white py-2 rounded-md disabled:bg-none disabled:bg-gray-600 disabled:cursor-progress flex justify-center"
             >
               {loading ? (
                 <span>Sending...</span>
