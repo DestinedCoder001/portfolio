@@ -3,14 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import github from "../assets/images/github-logo.svg";
 import { MdMenu, MdClose } from "react-icons/md";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { domAnimation, LazyMotion, m } from "framer-motion";
 import { navLinks } from "@/utils/constants";
 import NavBarLink from "./NavBarLink";
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
-  const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -24,9 +23,7 @@ const NavBar = () => {
     };
   }, []);
 
-  const openStyling = open
-    ? { height: (contentRef.current?.scrollHeight ?? 0) + 120 }
-    : { height: 60 };
+  const openStyling = open ? { height: 322 } : { height: 60 };
 
   const expandVariant = {
     initial: { height: 60 },
@@ -40,7 +37,10 @@ const NavBar = () => {
 
   return (
     <LazyMotion features={domAnimation} strict>
-      <div className="fixed w-full max-w-[1500px] left-1/2 -translate-x-1/2 top-4 z-[100]">
+      <div
+        data-testid="navbar"
+        className="fixed w-full max-w-[1500px] left-1/2 -translate-x-1/2 top-4 z-[100]"
+      >
         <m.div
           variants={slideDownVariant}
           initial="initial"
@@ -49,6 +49,7 @@ const NavBar = () => {
         >
           <m.div
             variants={expandVariant}
+            data-testid="expand-container"
             initial="initial"
             animate="animate"
             className="bg-white/10 text-white flex flex-col backdrop-blur-xl px-3 py-2 overflow-hidden"
@@ -61,64 +62,72 @@ const NavBar = () => {
                 <span className="gradient">D</span>
                 <span className="text-slate-200">O</span>
               </Link>
-              <div className="justify-between items-center gap-x-16 hidden md:flex">
-                <div className="flex items-center gap-x-4 font-medium">
-                  {navLinks.map((link) => (
-                    <NavBarLink
-                      key={link.href}
-                      href={link.href}
-                      text={link.text}
-                    />
-                  ))}
-                </div>
-                <Link
-                  href="https://github.com/Olowokere-Destiny"
-                  target="_blank"
+              {!open ? (
+                <div
+                  data-testid="desktop-links"
+                  className="justify-between items-center gap-x-16 hidden md:flex"
                 >
-                  <Image
-                    src={github}
-                    width={100}
-                    height={100}
-                    alt="github logo"
-                    className="w-8 h-8 cursor-pointer hover:opacity-80"
-                  />
-                </Link>
-              </div>
-              <div
+                  <div className="flex items-center gap-x-4 font-medium">
+                    {navLinks.map((link) => (
+                      <NavBarLink
+                        key={link.href}
+                        href={link.href}
+                        text={link.text}
+                      />
+                    ))}
+                  </div>
+                  <Link
+                    href="https://github.com/Olowokere-Destiny"
+                    target="_blank"
+                  >
+                    <Image
+                      src={github}
+                      width={100}
+                      height={100}
+                      alt="github logo"
+                      className="w-8 h-8 cursor-pointer hover:opacity-80"
+                    />
+                  </Link>
+                </div>
+              ) : null}
+
+              <button
                 onClick={() => setOpen(!open)}
                 className="block md:hidden active:bg-white/20 rounded-full"
               >
                 <div className="p-2 rounded-sm text-slate-200 cursor-pointer">
                   {open ? <MdClose size={24} /> : <MdMenu size={24} />}
                 </div>
-              </div>
+              </button>
             </div>
-            <div
-              ref={contentRef}
-              className="flex flex-col items-center gap-y-4 mt-6 md:hidden"
-            >
-              {navLinks.map((link) => (
-                <NavBarLink
-                  key={link.href}
-                  href={link.href}
-                  text={link.text}
-                  onClick={() => setOpen(false)}
-                />
-              ))}
-              <Link
-                href="https://github.com/Olowokere-Destiny"
-                target="_blank"
-                onClick={() => setOpen(false)}
+            {open ? (
+              <div
+                data-testid="mobile-links"
+                className="flex flex-col items-center gap-y-4 mt-6 md:hidden"
               >
-                <Image
-                  src={github}
-                  width={100}
-                  height={100}
-                  alt="github logo"
-                  className="w-8 h-8 cursor-pointer hover:opacity-80 mx-auto mt-3"
-                />
-              </Link>
-            </div>
+                {navLinks.map((link) => (
+                  <NavBarLink
+                    key={link.href}
+                    href={link.href}
+                    text={link.text}
+                    onClick={() => setOpen(false)}
+                  />
+                ))}
+                <Link
+                  href="https://github.com/Olowokere-Destiny"
+                  target="_blank"
+                  onClick={() => setOpen(false)}
+                >
+                  <Image
+                    src={github}
+                    width={100}
+                    height={100}
+                    alt="github logo"
+                    className="w-8 h-8 cursor-pointer hover:opacity-80 mx-auto mt-3"
+                  />
+                </Link>
+              </div>
+            ) : null}
           </m.div>
         </m.div>
       </div>
