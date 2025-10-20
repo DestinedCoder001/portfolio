@@ -44,33 +44,42 @@ const SingleProject = ({
   return (
     <LazyMotion features={domAnimation} strict>
       <m.div
+        data-testid="single-project"
         variants={variant}
-        animate={inView ? "animate": "initial"}
+        animate={inView ? "animate" : "initial"}
         initial="initial"
         ref={ref}
         className="w-full flex lg:flex-row flex-col gap-8 justify-center lg:justify-between items-center my-12 bg-white/10 p-4 rounded-3xl"
       >
         <div className="w-full lg:w-1/2">
-          {hasDemoVideo ? (
-            <div className="w-full h-full rounded-2xl overflow-hidden">
-              <video
-                controls
-                controlsList="nodownload"
-                playsInline
-                className="w-full h-full"
+          {
+            hasDemoVideo && demoVideoUrl ? (
+              <div
+                data-testid="video-demo"
+                className="w-full h-full rounded-2xl overflow-hidden"
               >
-                <source src={demoVideoUrl} type="video/mp4" />
-              </video>
-            </div>
-          ) : (
-            <Image
-              src={image || ""}
-              width={500}
-              height={500}
-              className="w-full rounded-2xl"
-              alt="Project Image"
-            />
-          )}
+                <video
+                  controls
+                  controlsList="nodownload"
+                  playsInline
+                  className="w-full h-full"
+                >
+                  <source src={demoVideoUrl} type="video/mp4" />
+                </video>
+              </div>
+            ) : (
+              image && (
+                <Image
+                  data-testid="photo-demo"
+                  src={image}
+                  width={500}
+                  height={500}
+                  className="w-full rounded-2xl"
+                  alt="Project Image"
+                />
+              )
+            )
+          }
         </div>
         <m.div
           className="w-full lg:w-1/2"

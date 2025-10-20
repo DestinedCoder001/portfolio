@@ -12,14 +12,14 @@ const Contact = () => {
   const variants = {
     initial: {
       opacity: 0,
-      x: "-30px",
+      y: "30px",
     },
     animate: {
       opacity: 1,
-      x: 0,
+      y: 0,
       transition: {
         staggerChildren: 0.2,
-        duration: 0.8,
+        duration: 0.6,
       },
     },
   };
@@ -69,17 +69,15 @@ const Contact = () => {
             publicKey: process.env.NEXT_PUBLIC_API_KEY,
           }
         )
-        .then(
-          () => {
-            setLoading(false);
-            notifySuccess("Sent successfully.");
-            setFormData({ email: "", subject: "", message: "" });
-          },
-          (error) => {
-            setLoading(false);
-            error && notifyError("Message could not be sent.");
-          }
-        );
+        .then(() => {
+          setLoading(false);
+          notifySuccess("Sent successfully.");
+          setFormData({ email: "", subject: "", message: "" });
+        })
+        .catch(() => {
+          setLoading(false);
+          notifyError("Message could not be sent.");
+        });
     }
   };
 
@@ -90,7 +88,7 @@ const Contact = () => {
         <m.section
           ref={ref}
           variants={variants}
-          animate={inView && "animate"}
+          animate={inView ? "animate" : "initial"}
           initial="initial"
           className="min-h-[95vh] gap-y-8 my-12 flex flex-col items-center justify-center"
           id="contact"
@@ -111,7 +109,7 @@ const Contact = () => {
             className="w-full md:w-2/3 lg:w-1/2 mx-auto space-y-3"
             onSubmit={(e) => handleSubmit(e)}
           >
-            <div>
+            <m.div variants={variants}>
               <label htmlFor="email" className="text-white text-[0.8rem]">
                 Your Email
               </label>
@@ -125,7 +123,7 @@ const Contact = () => {
                 }}
                 value={formData.email}
               />
-            </div>
+            </m.div>
             <m.div variants={variants}>
               <label htmlFor="subject" className="text-white text-[0.8rem]">
                 Subject
@@ -157,12 +155,13 @@ const Contact = () => {
             </m.div>
             <m.button
               type="submit"
+              data-testid="send-btn"
               disabled={loading}
               variants={variants}
               className="bg-gradient-to-r from-cyan-600 to-blue-800 w-[70%] mx-auto text-white py-2 rounded-md disabled:bg-none disabled:bg-gray-600 disabled:cursor-progress flex justify-center"
             >
               {loading ? (
-                <span>Sending...</span>
+                "Sending..."
               ) : (
                 <p className="flex items-center gap-x-1 mx-auto">
                   Send Message <LuSendHorizontal />
