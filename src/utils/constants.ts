@@ -34,7 +34,7 @@ export const projects = [
     title: "Teem",
     description:
       "Teem is a collaboration platform I built to help remote teams work together more efficiently! Features include real-time messaging, task management, built-in meetings and more!",
-    liveUrl: "https://teem-work.vercel.app",
+    liveUrl: "https://teem-work.onrender.com",
     codeUrl: "https://github.com/Olowokere-Destiny/teem",
     hasVideoDemo: true,
     demoVideoUrl: "teem_demo.mp4",
