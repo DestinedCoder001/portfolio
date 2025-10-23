@@ -69,7 +69,7 @@ function Skills() {
               variants={iconVariants}
               data-testid="skills"
               key={i}
-              className="flex flex-col gap-y-1"
+              className="flex flex-col gap-y-2"
             >
               <Image
                 src={icon}

@@ -13,6 +13,7 @@ import nodejsIcon from "../assets/images/node-icon.svg";
 import expressIcon from "../assets/images/express-icon.svg";
 import mongodbIcon from "../assets/images/mongodb-icon.svg";
 import socketIcon from "../assets/images/socket-icon.svg";
+import jestIcon from "../assets/images/jest.png";
 
 export const navLinks = [
   {
@@ -71,4 +72,5 @@ export const icons = [
   { icon: expressIcon, name: "ExpressJS" },
   { icon: mongodbIcon, name: "MongoDB" },
   { icon: socketIcon, name: "Socket.io" },
+  { icon: jestIcon, name: "Jest" },
 ];
