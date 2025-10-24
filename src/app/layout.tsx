@@ -12,6 +12,25 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Destiny Olowokere",
   description: "Destiny Olowokere: Frontend Developer",
+  keywords: [
+    "Destiny",
+    "Olowokere",
+    "Frontend",
+    "Developer",
+    "Fullstack",
+    "MERN",
+  ],
+  openGraph: {
+    title: "Destiny Olowokere",
+    images: [
+      {
+        url: "https://res.cloudinary.com/dddzjiuet/image/upload/v1761314889/awvdxtzqmbxxvdqm87qs.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    description: "Destiny Olowokere: Frontend Developer",
+  },
 };
 
 export default function RootLayout({
@@ -21,15 +40,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth no-scrollbar">
-      <head>
-      <meta name="title" property="og:title" content="Destiny Olowokere: Frontend Developer" />
-      </head>
       <body
         className={`${poppins.className} p-[5%] relative max-w-[1500px] mx-auto bg-[#070A17] min-h-screen`}
       >
-          <NavBar />
-          {children}
-          <Footer />
+        <NavBar />
+        {children}
+        <Footer />
       </body>
     </html>
   );
