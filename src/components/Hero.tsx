@@ -39,7 +39,7 @@ const Hero = () => {
           <p className="text-[1.2rem] font-medium mt-4">
             a{" "}
             <span className="text-[1.4rem] gradient uppercase font-semibold">
-              frontend developer
+              fullstack developer
             </span>{" "}
             passionate about building responsive, user-friendly web applications
             with modern technologies.
