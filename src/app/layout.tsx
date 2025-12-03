@@ -11,11 +11,12 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Destiny Olowokere",
-  description: "Destiny Olowokere: Frontend Developer",
+  description: "Destiny Olowokere: Fullstack Developer",
   keywords: [
     "Destiny",
     "Olowokere",
     "Frontend",
+    "Backend",
     "Developer",
     "Fullstack",
     "MERN",

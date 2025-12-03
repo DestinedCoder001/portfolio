@@ -14,6 +14,7 @@ import expressIcon from "../assets/images/express-icon.svg";
 import mongodbIcon from "../assets/images/mongodb-icon.svg";
 import socketIcon from "../assets/images/socket-icon.svg";
 import jestIcon from "../assets/images/jest.png";
+import rtlIcon from "../assets/images/rtl.jpeg";
 
 export const navLinks = [
   {
@@ -73,4 +74,5 @@ export const icons = [
   { icon: mongodbIcon, name: "MongoDB" },
   { icon: socketIcon, name: "Socket.io" },
   { icon: jestIcon, name: "Jest" },
+  { icon: rtlIcon, name: "React Testing Library" },
 ];

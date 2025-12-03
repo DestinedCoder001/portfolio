@@ -76,7 +76,7 @@ function Skills() {
                 alt="stack icon"
                 width={100}
                 height={100}
-                className="w-16 h-16 hover:scale-110 hover:-translate-y-1 mx-auto transition-all"
+                className="w-16 h-16 hover:scale-110 hover:-translate-y-1 mx-auto transition-all rounded-md"
               />
               <p className="text-slate-200 text-[0.8rem] text-center font-[600]">
                 {name}
